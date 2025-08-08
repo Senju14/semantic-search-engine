@@ -16,7 +16,6 @@ A semantic and hybrid search system using vector database (e.g. Pinecone), Postg
 ## Tech Stack
 
 - Python, FastAPI
-- Pinecone / FAISS
+- Pinecone 
 - PostgreSQL
-- SentenceTransformers, OpenAI CLIP
-- SQLAlchemy, Pydantic
+- SentenceTransformers, CLIP
