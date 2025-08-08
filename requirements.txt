@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pinecone-client
+sentence-transformers
+python-dotenv
+open_clip_torch
+torch
+torchvision
+Pillow

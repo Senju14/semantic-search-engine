@@ -1,0 +1,322 @@
+[
+  {
+    "id": "1",
+    "name": "Cotton T-Shirt",
+    "description": "Soft cotton t-shirt for casual wear.",
+    "category": "Topwear",
+    "price": 199000,
+    "brand": "Uniqlo",
+    "color": "White",
+    "size": "M",
+    "tags": [
+      "cotton",
+      "casual",
+      "summer"
+    ],
+    "image_path": "/images/1.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Denim Jacket",
+    "description": "Blue denim jacket with button closure and two pockets.",
+    "category": "Outerwear",
+    "price": 750000,
+    "brand": "Levi's",
+    "color": "Blue",
+    "size": "L",
+    "tags": [
+      "denim",
+      "jacket",
+      "cool"
+    ],
+    "image_path": "/images/2.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Leather Boots",
+    "description": "High-quality brown leather boots for men.",
+    "category": "Footwear",
+    "price": 1250000,
+    "brand": "Dr. Martens",
+    "color": "Brown",
+    "size": "42",
+    "tags": [
+      "boots",
+      "leather",
+      "men"
+    ],
+    "image_path": "/images/3.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Summer Dress",
+    "description": "Lightweight floral summer dress for women.",
+    "category": "Dresses",
+    "price": 420000,
+    "brand": "Zara",
+    "color": "Yellow",
+    "size": "S",
+    "tags": [
+      "floral",
+      "summer",
+      "women"
+    ],
+    "image_path": "/images/4.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Running Shoes",
+    "description": "Breathable mesh running shoes with cushioned sole.",
+    "category": "Footwear",
+    "price": 980000,
+    "brand": "Nike",
+    "color": "Black",
+    "size": "41",
+    "tags": [
+      "shoes",
+      "running",
+      "sports"
+    ],
+    "image_path": "/images/5.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Slim Fit Jeans",
+    "description": "Dark wash slim fit jeans with stretchable fabric.",
+    "category": "Bottomwear",
+    "price": 620000,
+    "brand": "H&M",
+    "color": "Dark Blue",
+    "size": "32",
+    "tags": [
+      "jeans",
+      "slim",
+      "stretch"
+    ],
+    "image_path": "/images/6.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Puffer Jacket",
+    "description": "Winter puffer jacket with hood and down filling.",
+    "category": "Outerwear",
+    "price": 1250000,
+    "brand": "The North Face",
+    "color": "Red",
+    "size": "XL",
+    "tags": [
+      "winter",
+      "jacket",
+      "warm"
+    ],
+    "image_path": "/images/7.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Basic Hoodie",
+    "description": "Comfy cotton hoodie for everyday use.",
+    "category": "Topwear",
+    "price": 450000,
+    "brand": "Uniqlo",
+    "color": "Grey",
+    "size": "L",
+    "tags": [
+      "hoodie",
+      "casual",
+      "cotton"
+    ],
+    "image_path": "/images/8.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Chinos Pants",
+    "description": "Khaki chinos pants perfect for office or casual use.",
+    "category": "Bottomwear",
+    "price": 540000,
+    "brand": "GAP",
+    "color": "Khaki",
+    "size": "34",
+    "tags": [
+      "chinos",
+      "office",
+      "casual"
+    ],
+    "image_path": "/images/9.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Formal Shirt",
+    "description": "Long sleeve white shirt for formal occasions.",
+    "category": "Topwear",
+    "price": 390000,
+    "brand": "Charles Tyrwhitt",
+    "color": "White",
+    "size": "M",
+    "tags": [
+      "formal",
+      "shirt",
+      "white"
+    ],
+    "image_path": "/images/10.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Track Pants",
+    "description": "Comfortable track pants for gym and running.",
+    "category": "Bottomwear",
+    "price": 380000,
+    "brand": "Adidas",
+    "color": "Black",
+    "size": "L",
+    "tags": [
+      "sports",
+      "track",
+      "gym"
+    ],
+    "image_path": "/images/11.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Maxi Skirt",
+    "description": "Pleated maxi skirt with floral design.",
+    "category": "Bottomwear",
+    "price": 440000,
+    "brand": "H&M",
+    "color": "Beige",
+    "size": "M",
+    "tags": [
+      "skirt",
+      "floral",
+      "long"
+    ],
+    "image_path": "/images/12.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Wool Sweater",
+    "description": "Soft wool sweater to keep you warm in winter.",
+    "category": "Topwear",
+    "price": 590000,
+    "brand": "Mango",
+    "color": "Navy",
+    "size": "S",
+    "tags": [
+      "wool",
+      "winter",
+      "sweater"
+    ],
+    "image_path": "/images/13.jpg"
+  },
+  {
+    "id": "14",
+    "name": "Bomber Jacket",
+    "description": "Trendy bomber jacket with zip closure and ribbed cuffs.",
+    "category": "Outerwear",
+    "price": 780000,
+    "brand": "Zara",
+    "color": "Olive",
+    "size": "L",
+    "tags": [
+      "bomber",
+      "jacket",
+      "trend"
+    ],
+    "image_path": "/images/14.jpg"
+  },
+  {
+    "id": "15",
+    "name": "Graphic Tee",
+    "description": "T-shirt with cool printed graphics and slogans.",
+    "category": "Topwear",
+    "price": 250000,
+    "brand": "Local Brand",
+    "color": "Black",
+    "size": "M",
+    "tags": [
+      "graphic",
+      "t-shirt",
+      "streetwear"
+    ],
+    "image_path": "/images/15.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Canvas Sneakers",
+    "description": "Classic white canvas sneakers with rubber sole.",
+    "category": "Footwear",
+    "price": 420000,
+    "brand": "Converse",
+    "color": "White",
+    "size": "43",
+    "tags": [
+      "sneakers",
+      "canvas",
+      "classic"
+    ],
+    "image_path": "/images/16.jpg"
+  },
+  {
+    "id": "17",
+    "name": "Polo Shirt",
+    "description": "Short sleeve polo shirt made from breathable fabric.",
+    "category": "Topwear",
+    "price": 330000,
+    "brand": "Lacoste",
+    "color": "Green",
+    "size": "L",
+    "tags": [
+      "polo",
+      "shirt",
+      "short sleeve"
+    ],
+    "image_path": "/images/17.jpg"
+  },
+  {
+    "id": "18",
+    "name": "Denim Shorts",
+    "description": "Ripped denim shorts for a casual summer look.",
+    "category": "Bottomwear",
+    "price": 280000,
+    "brand": "Levi's",
+    "color": "Blue",
+    "size": "M",
+    "tags": [
+      "shorts",
+      "denim",
+      "summer"
+    ],
+    "image_path": "/images/18.jpg"
+  },
+  {
+    "id": "19",
+    "name": "Blazer Jacket",
+    "description": "Slim-fit blazer for formal or business settings.",
+    "category": "Outerwear",
+    "price": 890000,
+    "brand": "Banana Republic",
+    "color": "Charcoal",
+    "size": "L",
+    "tags": [
+      "blazer",
+      "formal",
+      "business"
+    ],
+    "image_path": "/images/19.jpg"
+  },
+  {
+    "id": "20",
+    "name": "Crop Top",
+    "description": "Stylish crop top for women made of stretchy material.",
+    "category": "Topwear",
+    "price": 260000,
+    "brand": "Forever 21",
+    "color": "Pink",
+    "size": "S",
+    "tags": [
+      "crop",
+      "top",
+      "women"
+    ],
+    "image_path": "/images/20.jpg"
+  }
+]

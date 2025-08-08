@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semantic Search App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Semantic Search App</h1>
+
+        {% if message %}
+            <div class="message{% if "❌" in message %} error{% endif %}">{{ message }}</div>
+        {% endif %}
+
+        <div style="text-align:right; margin-bottom: 10px;">
+            <a href="/test_image" target="_blank">
+                <button type="button" class="btn-search" style="width:auto;">Test Hiển Thị Ảnh</button>
+            </a>
+        </div>
+
+        <div class="form-section">
+            <h2>➕ Thêm Sản Phẩm</h2>
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="add">
+                <div class="form-group"><input type="text" name="id" placeholder="ID" required></div>
+                <div class="form-group"><input type="text" name="name" placeholder="Tên sản phẩm" required></div>
+                <div class="form-group"><input type="text" name="description" placeholder="Mô tả" required></div>
+                <div class="form-group"><input type="text" name="category" placeholder="Danh mục" required></div>
+                <div class="form-group"><input type="number" name="price" placeholder="Giá (VNĐ)" required></div>
+                <div class="form-group"><input type="text" name="brand" placeholder="Thương hiệu"></div>
+                <div class="form-group"><input type="text" name="color" placeholder="Màu sắc"></div>
+                <div class="form-group"><input type="text" name="size" placeholder="Kích thước"></div>
+                <div class="form-group"><input type="text" name="tags" placeholder="Tags (phân cách bằng dấu phẩy)"></div>
+                <div class="form-group"><label>Chọn ảnh sản phẩm:</label><input type="file" name="add_image_file" accept="image/*"></div>
+                <button type="submit" class="btn-add">➕ Thêm sản phẩm</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h2>🔍 Tìm Kiếm Sản Phẩm</h2>
+            <div style="margin-bottom: 10px;">
+                <span style="font-weight:bold;">Mẫu tìm kiếm nhanh:</span>
+                <button type="button" class="btn-search" style="width:auto;" onclick="setSample('Tôi muốn tìm một chiếc áo sơ mi trắng tay dài cho nam phù hợp đi làm.')">Tôi muốn tìm một chiếc áo sơ mi trắng tay dài cho nam phù hợp đi làm.</button>
+                <button type="button" class="btn-search" style="width:auto;" onclick="setSample('Có mẫu váy hoa nhí màu xanh dương cho mùa hè không?')">Có mẫu váy hoa nhí màu xanh dương cho mùa hè không?</button>
+                <button type="button" class="btn-search" style="width:auto;" onclick="setSample('Tìm giúp tôi đôi giày thể thao màu đen size 42 dành cho nam.')">Tìm giúp tôi đôi giày thể thao màu đen size 42 dành cho nam.</button>
+                <button type="button" class="btn-search" style="width:auto;" onclick="setSample('I\'m looking for a comfortable pair of blue jeans suitable for daily wear.')">I'm looking for a comfortable pair of blue jeans suitable for daily wear.</button>
+                <button type="button" class="btn-search" style="width:auto;" onclick="setSample('Show me some elegant summer dresses with floral patterns for women.')">Show me some elegant summer dresses with floral patterns for women.</button>
+                <button type="button" class="btn-search" style="width:auto;" onclick="setSample('Find a classic black leather jacket for men in large size.')">Find a classic black leather jacket for men in large size.</button>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="search">
+                <div class="form-group">
+                    <input type="text" name="query" id="search_query_input" placeholder="Nhập từ khóa tìm kiếm...">
+                </div>
+                <div class="form-group">
+                    <label for="search_type">Loại tìm kiếm</label>
+                    <select name="search_type" id="search_type">
+                        <option value="semantic">Semantic</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="image">Image</option>
+                    </select>
+                </div>
+                <div class="form-group" id="image-upload-group" style="display:none;">
+                    <label for="image_file">Chọn ảnh để tìm kiếm</label>
+                    <input type="file" name="image_file" id="image_file" accept="image/*">
+                </div>
+                <button type="submit" class="btn-search">🔍 Tìm kiếm</button>
+            </form>
+        </div>
+        <script>
+            // Hiện input upload ảnh nếu chọn search_type = image
+            const searchType = document.getElementById('search_type');
+            const imageGroup = document.getElementById('image-upload-group');
+            if (searchType) {
+                searchType.addEventListener('change', function() {
+                    if (this.value === 'image') {
+                        imageGroup.style.display = '';
+                    } else {
+                        imageGroup.style.display = 'none';
+                    }
+                });
+            }
+
+            function setSample(text) {
+                document.getElementById('search_query_input').value = text;
+            }
+        </script>
+
+        {% if results %}
+            <div class="results">
+                <h2>📦 Kết Quả Tìm Kiếm</h2>
+                <ul>
+                    {% for item in results %}
+                    <li class="result-item">
+                        {% if item.metadata.image_path %}
+                            <img src="{{ item.metadata.image_path }}" class="result-image" alt="Ảnh sản phẩm">
+                        {% endif %}
+                        <div class="result-info">
+                            <h3>{{ item.metadata.name }}</h3>
+                            <p>{{ item.metadata.description }}</p>
+                            <p>
+                                <span class="label">Thương hiệu:</span> {{ item.metadata.brand or "N/A" }} |
+                                <span class="label">Giá:</span> {{ item.metadata.price or "N/A" }} |
+                                <span class="label">Loại:</span> {{ item.metadata.category or "N/A" }} |
+                                <span class="label">Score:</span> {{ "%.3f"|format(item.score or item.hybrid_score) }}
+                            </p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

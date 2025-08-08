@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Hiển Thị Ảnh</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .test-img-container {
+            max-width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 24px;
+            text-align: center;
+        }
+        .test-img-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .test-img-container .img-url {
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-img-container">
+        <h2>Test hiển thị ảnh</h2>
+        <img src="{{ test_img_url }}" alt="Test image">
+        <div class="img-url">URL: {{ test_img_url }}</div>
+    </div>
+</body>
+</html>
