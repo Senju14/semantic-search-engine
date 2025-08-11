@@ -2,6 +2,8 @@
 
 A semantic and hybrid search system using vector database (e.g. Pinecone), PostgreSQL, and CLIP model integration.
 
+<img width="3000" height="1500" alt="image" src="https://github.com/user-attachments/assets/c5b73857-82aa-4bac-beca-083bc9827ce6" />
+
 ## Features
 
 - Vector database setup (Pinecone)
