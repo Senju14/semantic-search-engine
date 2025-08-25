@@ -1,9 +1,11 @@
 fastapi
 uvicorn
-pinecone-client
+pinecone
 sentence-transformers
 python-dotenv
 open_clip_torch
 torch
 torchvision
 Pillow
+psycopg2-binary
+flask

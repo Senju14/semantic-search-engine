@@ -1,11 +1,21 @@
 import os
-import psycopg2
 from dotenv import load_dotenv
+
+# Support both psycopg2 (v2) and psycopg (v3) so the app can run across environments
+try:
+	import psycopg2 as _pg_driver
+except Exception:
+	try:
+		import psycopg as _pg_driver
+	except Exception as _e:
+		raise ImportError(
+			"No PostgreSQL driver found. Please install 'psycopg2-binary' or 'psycopg'."
+		) from _e
 
 load_dotenv()
 
 def get_connection():
-    return psycopg2.connect(
+	return _pg_driver.connect(
         host=os.getenv("POSTGRES_HOST", "localhost"),
         database=os.getenv("POSTGRES_DB", "semantic_search"),
         user=os.getenv("POSTGRES_USER", "postgres"),

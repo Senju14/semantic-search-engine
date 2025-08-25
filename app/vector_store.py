@@ -14,13 +14,23 @@ PINECONE_CLOUD = os.getenv("PINECONE_CLOUD", "aws")
 DIMENSION = 1024  # 384 (text) + 512 (image) + 128 (padding)
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
-if PINECONE_INDEX_NAME not in pc.list_indexes().names():
-    pc.create_index(
-        name=PINECONE_INDEX_NAME,
-        dimension=DIMENSION,
-        metric="cosine",
-        spec=ServerlessSpec(cloud=PINECONE_CLOUD, region=PINECONE_REGION)
-    )
+# Compatible handling for different Pinecone SDK list_indexes return types
+_indexes = pc.list_indexes()
+try:
+	_index_names = _indexes.names()
+except AttributeError:
+	try:
+		_index_names = [idx.name for idx in _indexes]
+	except Exception:
+		_index_names = _indexes
+
+if PINECONE_INDEX_NAME not in _index_names:
+	pc.create_index(
+		name=PINECONE_INDEX_NAME,
+		dimension=DIMENSION,
+		metric="cosine",
+		spec=ServerlessSpec(cloud=PINECONE_CLOUD, region=PINECONE_REGION)
+	)
 
 index = pc.Index(PINECONE_INDEX_NAME)
 
